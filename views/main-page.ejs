@@ -1,0 +1,54 @@
+<%- include('header.ejs') %>
+ 
+
+<!-- <div class="container">
+<div class=" p-[3.5rem] text-center flex items-center justify-center flex-col border-b border-b-indigo-500">
+   <h1 class="bg-indigo-300 text-indigo-900 text-[38px] text-center font-bold">
+    Welcome to Power and Machine Hub
+   </h1>
+   <p class="bg-indigo-300 p-2 text-center w-[25rem] text-[20px]">You will find everything you need to know about electical machines, such as quizzes, information, or calculators.
+    It is the perfect place for you to ace your subjects!
+   </p>
+</div>    
+</div> -->
+
+<div class="container p-[3.5rem]">
+    <div class="text-palette-primary m-auto bg-blue-200 p-[50px] w-[45%] relative z-10 rounded-sm">
+        <h1 class="font-bold text-center pb-[10px] text-[3rem]">Power and Machines Hub</h1>
+        <p class="p-[10px] text-center">
+            It is the perfect place for you to ace your subjects!
+
+        </p>
+    </div>
+</div>
+
+<!--  xl:grid-cols-4 -->
+
+<div id="machines" class="p-3">
+    <h2  class="text-[30px] font-bold text-palette-primary mb-6 p-3">Machines</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <% for(let i = 0; i < 4; i++) { %>
+            <div class="relative flex flex-col rounded-xl bg-white shadow-lg hover:shadow-xl transform transition-transform hover:scale-105">
+                <div class="relative h-48 overflow-hidden rounded-t-xl bg-white flex items-center justify-center">
+                    <img class="w-[50%] h-auto object-contain" src="/displays/alternator.png" alt="Machine">
+                </div>
+                <div class="p-4">
+                    <h5 class="text-lg font-bold text-gray-800">Machine Name</h5>
+                    <p class="text-sm text-gray-600">Brief description or features of the machine.</p>
+                </div>
+                <div class="p-4 pt-0">
+                    <a href="/machine">
+                       <button class="w-full bg-palette-primary hover:bg-blue-500 text-white py-2 rounded-md text-sm font-semibold">
+                        Start Machine
+                        </button> 
+                    </a>
+                    
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+
+
+<%- include('footer.ejs') %>
