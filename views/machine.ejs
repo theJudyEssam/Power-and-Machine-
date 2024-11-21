@@ -1,16 +1,16 @@
 <%- include('header.ejs') %>
 
 <div>
-   <h1>Machine</h1>
-    <div>
-        <img src="/displays/alternator.png">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-           Corrupti, fugit minima. Dicta, mollitia voluptatum est possimus architecto similique totam saepe nemo ipsum sint
-           quos quidem tenetur corrupti sapiente consectetur voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing 
-           elit. Id beatae officia, ullam sapiente et qui soluta magni officiis pariatur corrupti voluptas quas, illo nemo quos mollitia neque excepturi,
-           harum incidunt.</p>
-    </div>
+   <h1><%= machine %></h1>
+    <img src="/displays/alternator.png">
+    <h2>Description</h2>
+    <p></p>
+    <h2>Theory of Operation</h2>
+    <p><%- marked(sections['Theory of Operation']) %></p>
+    <h2>Construction</h2>
+    <ul></ul>
 </div>
+
 
 <!-- 
 each machine page should have:

@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "style": "npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css --watch" 
+    "style": "npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css --watch"
   },
   "author": "Judy Essam",
   "license": "ISC",
@@ -15,7 +15,8 @@
     "axios": "^1.7.7",
     "body-parser": "^1.20.3",
     "dotenv": "^16.4.5",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "marked": "^15.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",

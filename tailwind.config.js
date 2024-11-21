@@ -15,7 +15,8 @@ module.exports = {
           secondary: '#1E96FC',
           back_1:  '#EFA00B', 
           back_2: '#D65108', 
-          back_3: '#591F0A'
+          back_3: '#591F0A',
+          background:'#f7f9fc'
         }
       },
     },
