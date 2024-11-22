@@ -1,6 +1,6 @@
 <%- include('header.ejs') %>
 
-<div>
+<div id="information">
    <h1><%= machine %></h1>
     <img src="/displays/alternator.png">
     <h2>Description</h2>
@@ -9,6 +9,18 @@
     <p><%- marked(sections['Theory of Operation']) %></p>
     <h2>Construction</h2>
     <ul></ul>
+</div>
+
+<div id="calculator">
+    <h1>Calculate the efficiency and the voltage</h1>
+    <form>
+    <% for(let i = 0; i < inp_array.length; i++) { %>
+     <label><%= inp_array[i] %></label>
+     <input class="border border-black">
+    <% } %>
+    <button>Calculator</button>
+    </form>
+   
 </div>
 
 

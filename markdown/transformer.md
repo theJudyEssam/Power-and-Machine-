@@ -12,3 +12,6 @@ A transformer is a static electrical machine that transfers electrical energy be
 - Field Windings
 - Coils
 - Stuff 3omoman
+
+## Inputs
+X1 X2 R1 R2 Rc Xm a V2 Pout PF

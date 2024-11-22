@@ -6,7 +6,6 @@ import { marked } from "marked"
 import fs from "fs"
 import path from "path"
 import { fileURLToPath } from 'url';
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -45,7 +44,12 @@ app.get("/machine/:machine", (req, res)=>{
             }
         })
         
-        res.render("machine.ejs",{ machine, sections, marked})
+        console.log(typeof(sections["Inputs"]))
+        console.log(sections["Inputs"])
+        let inp_array = sections["Inputs"].split(" ").filter(Boolean); 
+        console.log(inp_array);
+
+        res.render("machine.ejs",{ machine, sections, marked, inp_array})
     })
 })
 

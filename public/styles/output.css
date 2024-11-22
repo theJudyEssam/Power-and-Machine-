@@ -695,8 +695,17 @@ video {
   border-top-right-radius: 0.75rem;
 }
 
+.border{
+  border-width: 1px;
+}
+
 .border-b{
   border-bottom-width: 1px;
+}
+
+.border-black{
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .border-b-indigo-500{
@@ -712,11 +721,6 @@ video {
 .bg-indigo-300{
   --tw-bg-opacity: 1;
   background-color: rgb(165 180 252 / var(--tw-bg-opacity));
-}
-
-.bg-palette-background{
-  --tw-bg-opacity: 1;
-  background-color: rgb(247 249 252 / var(--tw-bg-opacity));
 }
 
 .bg-palette-primary{
