@@ -24,6 +24,7 @@ S_Router.post("/transformer/efficiency", (req, res)=>{
     const Pout = req.body["Pout"]
     const PF = req.body["PF"]
 
+    
     //getting vals for the approx circuit
     R2 = (a*a)* R2;
     X2 = (a*a)* X2;
@@ -34,11 +35,11 @@ S_Router.post("/transformer/efficiency", (req, res)=>{
     //DISCLAIMER:  the phase angles are all in radians
 
     const I2_mag = S / V2;
-    const I2_angle = -Math.acos(0.8);
+    const I2_angle = -Math.acos(0.8); 
     let I2_complex_obj= polartoRectangular(I2_mag, I2_angle);
     let I2_complex = math.complex(I2_complex_obj.real, I2_complex_obj.imag); //used in calculations
     let I2_polar = rectangularToPolar(I2_complex.re, I2_complex.im)
-
+   
     // console.log(`I2_mag: ${I2_mag} \n I2_angle: ${I2_angle}`)
     // console.log(I2_complex);
     // console.log(I2_polar);
@@ -49,16 +50,35 @@ S_Router.post("/transformer/efficiency", (req, res)=>{
     const V1_complex = math.add(V2, math.multiply(I2_complex,math.add(Z1, Z2) ));
  
     const V1_polar = rectangularToPolar(V1_complex.re, V1_complex.im);
-    console.log(`V1_mag = ${V1_polar.magnitude} V1_angle = ${V1_polar.phaseAngle * (180 / Math.PI)}`)
+   // console.log(`V1_mag = ${V1_polar.magnitude} V1_angle = ${V1_polar.phaseAngle * (180 / Math.PI)}`)
 
+    const VR =( (V1_polar.magnitude - V2) / V2) *100;
+    console.log(VR);
 
-    // const I2_polar = math.complex(I2_complex).toPolar();
-    // const V1_polar = math.complex(V1).toPolar();
+    const req1 = Z2.re + Z1.re; //8
+    const Rc_complex = math.complex(Rc, 0);
+    console.log(Rc_complex);
+    const Ic = math.divide(V1_complex , Rc_complex); //complex num
+    const Ic_polar = rectangularToPolar(Ic.re, Ic.im);
 
-    // console.log(` X1 is ${X1} \n R1 is ${R1} \n X2 is ${X2} \n R2 is ${R2}`)
-    // console.log(I2_polar)
-    // console.log(V1_polar);
-    res.sendStatus(200)
+    console.log(Pout);
+    console.log(Ic_polar.magnitude);
+    console.log(Rc);
+    console.log(req1);
+
+    const part1 = Ic_polar.magnitude*Ic_polar.magnitude * Rc ;
+    console.log(part1);
+
+    const part2 = parseInt(25*req1, 10);
+    console.log(part2);
+    const Pin = parseInt(Pout) + part1 + part2;
+    console.log(Pin)
+    const eff =( (Pout) / Pin) * 100
+
+    console.log(eff)
+    res.status(200).json({
+        efficiency: eff,
+    });
     
 
 })

@@ -8,8 +8,8 @@ function polartoRectangular(magnitude, phase){
 }
 
 function rectangularToPolar(real, imag) {
+    
     const magnitude = Math.sqrt(real * real + imag * imag);
-
     const phaseAngle = Math.atan2(imag, real);
 
     return { magnitude: magnitude, phaseAngle: phaseAngle };
