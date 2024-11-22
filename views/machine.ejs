@@ -13,13 +13,17 @@
 
 <div id="calculator">
     <h1>Calculate the efficiency and the voltage</h1>
-    <form>
+    <form >
     <% for(let i = 0; i < inp_array.length; i++) { %>
      <label><%= inp_array[i] %></label>
-     <input class="border border-black">
+     <input id="<%= inp_array[i] %>" class="border border-black">
     <% } %>
-    <button>Calculator</button>
+    <button id="calculator-btn">Calculator</button>
     </form>
+
+    <h1 id="eff"> </h1>
+    <h1 id="vr"> </h1>
+    <div id="results"></div>
    
 </div>
 
