@@ -8,22 +8,30 @@ const math = create(all)
 
 const S_Router = express.Router();
 S_Router.use(bodyParser.urlencoded({ extended: true }));
+S_Router.use(bodyParser.json());
 
 //transformer function, take in the inputs and solve 
 S_Router.post("/transformer/efficiency", (req, res)=>{
 
-    //inputs
-    const R1 = req.body["R1"];
-    let R2 = req.body["R2"];
-    const X1 = req.body["X1"];
-    let X2 = req.body["X2"];
-    const Rc = req.body["Rc"];
-    const Xm = req.body["Xm"];
-    const a = req.body["a"]
-    let V2 = req.body["V2"]
-    const Pout = req.body["Pout"]
-    const PF = req.body["PF"]
 
+    try {
+          //inputs
+    // const R1 = req.body["R1"];
+    // let R2 = req.body["R2"];
+    // const X1 = req.body["X1"];
+    // let X2 = req.body["X2"];
+    // const Rc = req.body["Rc"];
+    // const Xm = req.body["Xm"];
+    // const a = req.body["a"]
+    // let V2 = req.body["V2"]
+    // const Pout = req.body["Pout"]
+    // const PF = req.body["PF"]
+
+    let { R1, R2, X1, X2, Rc, Xm, a, V2, Pout, PF } = req.body;
+
+
+    console.log(R1)
+    console.log(R2)
     
     //getting vals for the approx circuit
     R2 = (a*a)* R2;
@@ -79,6 +87,11 @@ S_Router.post("/transformer/efficiency", (req, res)=>{
     res.status(200).json({
         efficiency: eff,
     });
+  
+      } catch (error) {
+        console.error("Error processing request:", error);
+        res.status(500).json({ error: "Internal Server Error" });
+      }
     
 
 })

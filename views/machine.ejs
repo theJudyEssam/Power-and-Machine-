@@ -16,14 +16,16 @@
     <form >
     <% for(let i = 0; i < inp_array.length; i++) { %>
      <label><%= inp_array[i] %></label>
-     <input id="<%= inp_array[i] %>" class="border border-black">
+     <input id="<%= inp_array[i] %>" class=" border border-black" required>
     <% } %>
     <button id="calculator-btn">Calculator</button>
     </form>
 
     <h1 id="eff"> </h1>
     <h1 id="vr"> </h1>
-    <div id="results"></div>
+    <div id="results">
+        hello
+    </div>
    
 </div>
 
