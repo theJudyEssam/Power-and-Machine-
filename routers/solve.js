@@ -86,6 +86,7 @@ S_Router.post("/transformer/efficiency", (req, res)=>{
     console.log(eff)
     res.status(200).json({
         efficiency: eff,
+        VR: VR
     });
   
       } catch (error) {

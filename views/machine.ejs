@@ -1,31 +1,56 @@
 <%- include('header.ejs') %>
 
-<div id="information">
-   <h1><%= machine %></h1>
-    <img src="/displays/alternator.png">
-    <h2>Description</h2>
-    <p></p>
-    <h2>Theory of Operation</h2>
-    <p><%- marked(sections['Theory of Operation']) %></p>
-    <h2>Construction</h2>
-    <ul></ul>
+<div class="p-3" id="information">
+   <h1 class="text-[36px] p-3 font-extrabold"><%= machine %></h1>
+   
+    <section class="flex p-5">
+         <img class="w-[45%]" src="/displays/Transformer.png">
+         <div class="p-2.5">
+            <h2 class="text-[20px] font-bold p-1">Description</h2>
+            <p><%- marked(sections['Description']) %></p>
+            <h2 class="text-[20px] font-bold p-1">Theory of Operation</h2>
+            <p><%- marked(sections['Theory of Operation']) %></p>
+         </div>
+        
+    </section>
+    <section class="flex p-5">
+    <div class="p-2.5">
+        <h2 class="text-[20px] font-bold p-1">Construction</h2>
+        <ul><%- marked(sections['Construction']) %> </ul>
+    </div>
+    <img class="w-[45%]" src="/displays/Transformer2.png">
+
+    
+    </section>
+    
 </div>
 
-<div id="calculator">
-    <h1>Calculate the efficiency and the voltage</h1>
-    <form >
-    <% for(let i = 0; i < inp_array.length; i++) { %>
-     <label><%= inp_array[i] %></label>
-     <input id="<%= inp_array[i] %>" class=" border border-black" required>
-    <% } %>
-    <button id="calculator-btn">Calculator</button>
-    </form>
+<div class="p-5" id="calculator">
 
-    <h1 id="eff"> </h1>
-    <h1 id="vr"> </h1>
-    <div id="results">
-        hello
-    </div>
+    
+    
+    <form class="">
+
+        <fieldset class="p-3 border border-black ">
+        <legend class="text-[16px] font-semibold">Efficiency and Voltage Regulation Calculator</legend>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+             <% for(let i = 0; i < inp_array.length-1; i++) { %>
+            <div class="flex flex-col">
+                <label class="text-[15px]"><%= inp_array[i] %></label>
+                <input id="<%= inp_array[i] %>" class="rounded" required>
+            </div>
+        <% } %>
+        </div>
+       
+        <div class="flex justify-center mt-4">
+            <button class="p-2 m-1 text-center bg-palette-primary text-white" id="calculator-btn">Calculate</button>
+        </div>
+        <div id="results">
+        
+        </div>
+        </fieldset>
+    </form>
+   
    
 </div>
 

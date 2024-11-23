@@ -45,7 +45,7 @@ document.getElementById("calculator-btn").addEventListener("click",  (event)=>{
         console.log(`the result is ${result}`)
         document.getElementById("results").innerHTML = `
         <p>Efficiency: ${result.efficiency.toFixed(2)}%</p>
-       
+        <p>Voltage Regulation: ${result.VR.toFixed(2)}%</p>
       `;
       })
       .catch(error => {
