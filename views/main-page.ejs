@@ -27,17 +27,17 @@
 <div id="machines" class="p-3">
     <h2  class="text-[30px] font-bold text-palette-primary mb-6 p-3">Machines</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <% for(let i = 0; i < 4; i++) { %>
+        <% for(let i = 0; i < machines.length; i++) { %>
             <div class="relative flex flex-col rounded-xl bg-white shadow-lg hover:shadow-xl transform transition-transform hover:scale-105">
                 <div class="relative h-48 overflow-hidden rounded-t-xl bg-white flex items-center justify-center">
                     <img class="w-[50%] h-auto object-contain" src="/displays/alternator.png" alt="Machine">
                 </div>
                 <div class="p-4">
-                    <h5 class="text-lg font-bold text-gray-800">Machine Name</h5>
-                    <p class="text-sm text-gray-600">Brief description or features of the machine.</p>
+                    <h5 class="text-lg font-bold text-gray-800"><%= machines[i]['name'] %></h5>
+                    <p class="text-sm text-gray-600"><%= machines[i]['description'] %></p>
                 </div>
                 <div class="p-4 pt-0">
-                    <a href="/machine/transformer">
+                    <a href="/machine/<%= machines[i]['name'] %>">
                        <button class="w-full bg-palette-primary hover:bg-blue-500 text-white py-2 rounded-md text-sm font-semibold">
                         Start Machine
                         </button> 

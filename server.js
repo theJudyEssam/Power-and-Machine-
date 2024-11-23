@@ -17,10 +17,32 @@ app.use('/scripts', express.static('public/scripts'));
 app.use('/styles', express.static('public/styles'));
 app.use('/displays', express.static('public/displays'));
 
+const machines = [
+    {
+      name: "transformer",
+      description: "A device that transfers electrical energy between circuits using electromagnetic induction, commonly used to step up or step down voltage levels."
+    },
+    {
+      name: "DC Motor",
+      description: "An electric motor that converts direct current (DC) electrical energy into mechanical energy, widely used in industries and automation systems."
+    },
+    {
+      name: "DC Generator",
+      description: "A machine that converts mechanical energy into direct current (DC) electrical energy, often used in power generation and battery charging."
+    },
+    {
+      name: "Alternator",
+      description: "A generator that produces alternating current (AC), commonly found in vehicles to charge the battery and power electrical systems."
+    }
+  ];
+  
 
 app.get("/", (req, res)=>{
-    res.render("main-page.ejs")
+    //const machines  = ["transformer", "DC motor", "DC generator", "Alternator"]
+    console.log(machines[1])
+    res.render("main-page.ejs",{ machines})
 })
+
 
 
 app.get("/machine/:machine", (req, res)=>{
@@ -29,7 +51,7 @@ app.get("/machine/:machine", (req, res)=>{
 
 
     fs.readFile(filePath, 'utf-8', (err, data)=>{
-        if(err){return res.status(404).send("Machine not here")}
+        if(err){return res.render("notfound.ejs")}
 
         const sections = {};
         const lines = data.split('\n');
