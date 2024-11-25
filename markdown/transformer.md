@@ -10,9 +10,7 @@ When an alternating current flows through the primary winding, it generates a ti
 
 This magnetic field induces a voltage in the secondary winding proportional to the turns ratio of the transformer.
 
-The voltage ratio between primary and secondary windings depends on the ratio of the number of turns in each winding:
-The voltage ratio is given by 
--   $$ \frac{V_2}{V_1} = \frac{N_2}{N_1} $$.
+The voltage ratio between primary and secondary windings depends on the ratio of the number of turns in each winding
 
 
 
