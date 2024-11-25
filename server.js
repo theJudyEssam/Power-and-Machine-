@@ -12,6 +12,7 @@ const __dirname = path.dirname(__filename);
 
 dotenv.config()
 const app = express();
+const port = process.env.PORT || 5000
 
 app.use('/scripts', express.static('public/scripts'));
 app.use('/styles', express.static('public/styles'));
@@ -85,7 +86,7 @@ app.get("/machine/:machine", (req, res)=>{
 app.use("/solve", S_Router);
 
 
-app.listen(3000);
+app.listen(port);
 
 
 
