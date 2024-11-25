@@ -85,7 +85,7 @@ app.get("/machine/:machine", (req, res)=>{
 app.use("/solve", S_Router);
 
 
-app.listen(process.env.PORT);
+app.listen(3000);
 
 
 
