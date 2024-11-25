@@ -44,7 +44,7 @@ const machines = [
 app.get("/", (req, res)=>{
     //const machines  = ["transformer", "DC motor", "DC generator", "Alternator"]
     console.log(machines[1])
-    res.render("main-page.ejs",{ machines})
+    res.render("index.ejs",{ machines})
 })
 
 
