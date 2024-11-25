@@ -13,9 +13,9 @@
 </div> -->
 
 <div class="container p-[3.5rem]">
-    <div class="text-palette-primary m-auto bg-blue-200 p-[50px] w-[45%] relative z-10 rounded-sm">
-        <h1 class="font-bold text-center pb-[10px] text-[3rem]">Power and Machines Hub</h1>
-        <p class="p-[10px] text-center">
+    <div class="text-palette-primary m-auto p-[50px]  lg:w-[45%] relative z-10 rounded-sm">
+        <h1 class="font-black text-center pb-[10px] text-[1rem] lg:text-[4rem]">Power and Machines Hub</h1>
+        <p class="text-orange-700 p-[5px] text-center">
             It is the perfect place for you to ace your subjects!
 
         </p>
@@ -30,15 +30,15 @@
         <% for(let i = 0; i < machines.length; i++) { %>
             <div class="relative flex flex-col rounded-xl bg-white shadow-lg hover:shadow-xl transform transition-transform hover:scale-105">
                 <div class="relative h-48 overflow-hidden rounded-t-xl bg-white flex items-center justify-center">
-                    <img class="w-[50%] h-auto object-contain" src="/displays/alternator.png" alt="Machine">
+                    <img class="w-[50%] h-auto object-contain" src="<%= machines[i]["png_path"] %>" alt="Machine">
                 </div>
                 <div class="p-4">
-                    <h5 class="text-lg font-bold text-gray-800"><%= machines[i]['name'] %></h5>
+                    <h5 class="text-lg font-bold text-palette-primary"><%= machines[i]['name'] %></h5>
                     <p class="text-sm text-gray-600"><%= machines[i]['description'] %></p>
                 </div>
                 <div class="p-4 pt-0">
                     <a href="/machine/<%= machines[i]['name'] %>">
-                       <button class="w-full bg-palette-primary hover:bg-blue-500 text-white py-2 rounded-md text-sm font-semibold">
+                       <button class="w-full bg-palette-primary hover:bg-orange-500 text-white py-2 rounded-md text-sm font-semibold">
                         Start Machine
                         </button> 
                     </a>

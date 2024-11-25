@@ -20,19 +20,23 @@ app.use('/displays', express.static('public/displays'));
 const machines = [
     {
       name: "transformer",
-      description: "A device that transfers electrical energy between circuits using electromagnetic induction, commonly used to step up or step down voltage levels."
+      description: "A device that transfers electrical energy between circuits using electromagnetic induction, commonly used to step up or step down voltage levels.",
+      png_path: "/displays/Transformer.png"
     },
     {
       name: "DC Motor",
-      description: "An electric motor that converts direct current (DC) electrical energy into mechanical energy, widely used in industries and automation systems."
+      description: "An electric motor that converts direct current (DC) electrical energy into mechanical energy, widely used in industries and automation systems.",
+      png_path: "/displays/DC-Motor.png"
     },
     {
       name: "DC Generator",
-      description: "A machine that converts mechanical energy into direct current (DC) electrical energy, often used in power generation and battery charging."
+      description: "A machine that converts mechanical energy into direct current (DC) electrical energy, often used in power generation and battery charging.",
+      png_path: "/displays/DC-Generator.png"
     },
     {
       name: "Alternator",
-      description: "A generator that produces alternating current (AC), commonly found in vehicles to charge the battery and power electrical systems."
+      description: "A generator that produces alternating current (AC), commonly found in vehicles to charge the battery and power electrical systems.",
+      png_path: "/displays/alternator.png"
     }
   ];
   
@@ -58,7 +62,7 @@ app.get("/machine/:machine", (req, res)=>{
         let currentSection = null;
 
         lines.forEach((line)=>{
-            if(line.startsWith('##')){
+            if(line.startsWith('## ')){
                 currentSection = line.replace('##', '').trim();
                 sections[currentSection] ='';
             }

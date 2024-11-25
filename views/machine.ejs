@@ -1,10 +1,11 @@
 <%- include('header.ejs') %>
 
-<div class="p-3" id="information">
+
+<div class="p-3 pt-[7rem]" id="information">
    <h1 class="text-[36px] p-3 font-extrabold"><%= machine %></h1>
    
     <section class="flex p-5">
-         <img class="w-[45%]" src="/displays/Transformer.png">
+         <img class="w-[45%] hidden lg:block" src="/displays/Transformer.png">
          <div class="p-2.5">
             <h2 class="text-[20px] font-bold p-1">Description</h2>
             <p><%- marked(sections['Description']) %></p>
@@ -17,8 +18,10 @@
     <div class="p-2.5">
         <h2 class="text-[20px] font-bold p-1">Construction</h2>
         <ul><%- marked(sections['Construction']) %> </ul>
+        <h2 class="text-[20px] font-bold p-1">Applications</h2>
+        <ul><%- marked(sections['Applications']) %></ul>
     </div>
-    <img class="w-[45%]" src="/displays/Transformer2.png">
+    <img class="w-[45%] hidden lg:block" src="/displays/Transformer2.png">
 
     
     </section>
@@ -32,6 +35,7 @@
     <form class="">
 
         <fieldset class="p-3 border border-black ">
+      
         <legend class="text-[16px] font-semibold">Efficiency and Voltage Regulation Calculator</legend>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
              <% for(let i = 0; i < inp_array.length-1; i++) { %>
@@ -45,11 +49,29 @@
         <div class="flex justify-center mt-4">
             <button class="p-2 m-1 text-center bg-palette-primary text-white" id="calculator-btn">Calculate</button>
         </div>
+
         <div id="results">
         
         </div>
+
+        <
         </fieldset>
     </form>
+
+
+    <div class="p-5 m-4 border bg-palette-secondary ">
+    <button class="accordion">What are these inputs?</button>
+    <div class="panel">
+    <ul><%- marked(sections['Inputs_Details']) %></ul>
+    </div>
+
+    <button class="accordion">How does this work?</button>
+    <div class="panel">
+    <ul class="p-3 flex flex-col gap-5"><%- marked(sections['Transformer Efficiency Calculator']) %></ul>
+    </div>
+
+    
+    </div>
    
    
 </div>
