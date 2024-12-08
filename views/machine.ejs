@@ -40,10 +40,25 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
              <% for(let i = 0; i < inp_array.length-1; i++) { %>
             <div class="flex flex-col">
-                <label class="text-[15px]"><%= inp_array[i] %></label>
+                <label class="text-[15px]">
+                    <% if (inp_units[i] != '.'){ %>
+                    <%= inp_array[i] %><span>  (<%= inp_units[i] %>)</span>
+                    <% } else { %>
+                    <%= inp_array[i] %>
+                    <% } %>
+                </label>
                 <input id="<%= inp_array[i] %>" class="rounded" required>
-            </div>
+             </div>
         <% } %>
+        <div class="flex flex-col">
+            <% if (inp_array.includes("PF")){ %>
+                <label for="dropdown">PF leading or lagging</label>
+                <select id="dropdown" name="options">
+                    <option value="option1">leading</option>
+                    <option value="option2">lagging</option>
+                </select>
+            <% } %>
+        </div>
         </div>
        
         <div class="flex justify-center mt-4">
@@ -54,7 +69,7 @@
         
         </div>
 
-        <
+        
         </fieldset>
     </form>
 

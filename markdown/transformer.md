@@ -36,7 +36,11 @@ Secondary Windings: Connected to the load. The voltage induced depends on the tu
 - 5- **Insulation and Cooling Systems**: Transformers use insulation to prevent short circuits and systems such as oil-based cooling or air cooling to dissipate heat generated during operation.
 
 ## Inputs
-X1 X2 R1 R2 Rc Xm a V2 Pout PF .
+X1 X2 R1 R2 Rc Xm a V2 Pout PF  .
+
+## Units
+
+Ohms Ohms Ohms Ohms Ohms Ohms . Volts Watt . .
 
 
 ## Inputs_Details

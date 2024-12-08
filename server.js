@@ -59,6 +59,7 @@ app.get("/machine/:machine", (req, res)=>{
         if(err){return res.render("notfound.ejs")}
 
         const sections = {};
+        
         const lines = data.split('\n');
         let currentSection = null;
 
@@ -72,12 +73,13 @@ app.get("/machine/:machine", (req, res)=>{
             }
         })
         
-        console.log(typeof(sections["Inputs"]))
-        console.log(sections["Inputs"])
+      //  console.log(typeof(sections["Inputs"]))
+       // console.log(sections["Inputs"])
         let inp_array = sections["Inputs"].split(" ").filter(Boolean); 
+        let inp_units = sections["Units"].split(" ").filter(Boolean);
         console.log(inp_array);
 
-        res.render("machine.ejs",{ machine, sections, marked, inp_array})
+        res.render("machine.ejs",{ machine, sections, marked, inp_array, inp_units})
     })
 })
 
