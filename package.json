@@ -2,14 +2,14 @@
   "name": "pm_project",
   "version": "1.0.0",
   "description": "power and machines project cuz i need the bonus",
-  "main": "server.js",
+  "main": "index.js",
   "engines": {
     "node": "18.x"
   },
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "node index.js",
     "style": "npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css --watch"
   },
   "author": "Judy Essam",
