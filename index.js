@@ -18,6 +18,7 @@ app.use('/scripts', express.static('public/scripts'));
 app.use('/styles', express.static('public/styles'));
 app.use('/displays', express.static('public/displays'));
 
+
 const machines = [
     {
       name: "transformer",
@@ -52,7 +53,8 @@ app.get("/", (req, res)=>{
 
 app.get("/machine/:machine", (req, res)=>{
     const machine = req.params.machine;
-    const filePath = path.join(__dirname, 'markdown', `${machine}.md`);
+    const filePath = path.join(__dirname, 'public', 'markdown', `${machine}.md`);
+
 
 
     fs.readFile(filePath, 'utf-8', (err, data)=>{
@@ -88,7 +90,7 @@ app.get("/machine/:machine", (req, res)=>{
 app.use("/solve", S_Router);
 
 
-app.listen(port);
+export default app;
 
 
 
